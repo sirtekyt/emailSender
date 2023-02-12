@@ -17,6 +17,7 @@ public class ReceiverController {
     public List<Receiver> getAllReceivers(){
         return receiverRepository.findAll();
     }
+
     @PostMapping("/receivers")
     public Receiver createReceiver(@RequestBody Receiver receiver){
         return receiverRepository.save(receiver);

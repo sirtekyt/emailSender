@@ -1,7 +1,13 @@
 package com.onwelo.mailsender;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity(name = "receiver")
 public class Receiver {
     @Id
@@ -10,17 +16,5 @@ public class Receiver {
 
     @Column(name = "EMAIL",nullable = false,unique = true)
     private String email;
-
-    public Long getId() {
-        return id;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 
 }
