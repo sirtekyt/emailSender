@@ -16,7 +16,7 @@ App will be running on port 8081. You can change this in application.properties.
 
 # Sender
 
-You can specify sender in application.properties. This could be done through another class.
+You can specify sender in application.properties for GMAIL USER. This could be done through another class.
 
 # Receiver
 
