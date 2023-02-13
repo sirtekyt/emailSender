@@ -1,17 +1,20 @@
 package com.onwelo.mailsender;
 
-import jakarta.persistence.*;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity(name = "receiver")
+@Entity
+@Table(name="RECEIVER")
 public class Receiver {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "EMAIL",nullable = false,unique = true)

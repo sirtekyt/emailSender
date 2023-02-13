@@ -25,13 +25,13 @@ public class ReceiverController {
 
     @GetMapping("/receivers/{id}")
     public Receiver getReceiverById(@PathVariable(value= "id") Long id){
-        return receiverRepository.findById(String.valueOf(id))
+        return receiverRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFoundException("Receiver","id",id));
     }
 
     @PutMapping("/receivers/{id}")
     public Receiver updateReceiver(@PathVariable(value = "id") Long id, @RequestBody Receiver receiverDetails){
-        Receiver receiver=receiverRepository.findById(String.valueOf(id))
+        Receiver receiver=receiverRepository.findById(id)
                 .orElseThrow(()->new ResourceNotFoundException("Receiver","id",id));
         receiver.setEmail(receiverDetails.getEmail());
         Receiver updatedReceiver= receiverRepository.save(receiver);
@@ -39,7 +39,7 @@ public class ReceiverController {
     }
 
     public ResponseEntity<?> deleteReceiver(@PathVariable(value = "id") Long id){
-        Receiver receiver=receiverRepository.findById(String.valueOf(id))
+        Receiver receiver=receiverRepository.findById(id)
                 .orElseThrow(()->new ResourceNotFoundException("Receiver","id",id));
 
         receiverRepository.delete(receiver);
