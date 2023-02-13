@@ -23,6 +23,7 @@ public class ReceiverController {
         return receiverRepository.save(receiver);
     }
 
+
     @GetMapping("/receivers/{id}")
     public Receiver getReceiverById(@PathVariable(value= "id") Long id){
         return receiverRepository.findById(id)

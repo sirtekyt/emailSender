@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 
 @Data
 @AllArgsConstructor
@@ -17,6 +18,7 @@ public class Receiver {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Email(message="Please provide a valid email address")
     @Column(name = "EMAIL",nullable = false,unique = true)
     private String email;
 
